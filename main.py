@@ -20,4 +20,4 @@ except FileNotFoundError:
 else:
     words = contents.split()
     occurrences = words.count(chosen_word)
-    print(f"The word '{chosen_word}' appears {occurrences} times in the given file.\n")
+    print(f"The word '{chosen_word}' appears {occurrences} times in the {file_path}.\n")
