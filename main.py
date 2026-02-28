@@ -4,12 +4,14 @@ import argparse
 parser = argparse.ArgumentParser()
 
 parser.add_argument("word")
+parser.add_argument("path")
 
 args = parser.parse_args()
 
 chosen_word = args.word
+file_path = args.path
 
-path = Path('Field Artillery Training. 1914 by GB War Office.txt')
+path = Path(file_path)
 
 try:
     contents = path.read_text()
