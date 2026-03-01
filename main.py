@@ -17,8 +17,8 @@ file_path = args.path
 
 path = Path(file_path)
 
-def word_count(doc):
-    return doc.count(chosen_word)
+def word_count(doc, word):
+    return doc.count(word)
 
 try:
     contents = path.read_text()
@@ -27,5 +27,5 @@ except FileNotFoundError:
     logger.error("Attempted run with file not found, %s", file_path)
 else:
     words = contents.split()
-    occurrences = word_count(words)
+    occurrences = word_count(words, chosen_word)
     print(f"The word '{chosen_word}' appears {occurrences} times in the {file_path}.\n")
