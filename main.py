@@ -3,7 +3,7 @@ import argparse
 import logging
 
 logger = logging.getLogger(__name__)
-logging.basicConfig(filename='runtime.log', encoding='utf-8', level=logging.DEBUG, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+logging.basicConfig(filename='runtime.log', encoding='utf-8', level=logging.DEBUG, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S')
 
 parser = argparse.ArgumentParser()
 
@@ -17,6 +17,9 @@ file_path = args.path
 
 path = Path(file_path)
 
+def word_count(doc):
+    return doc.count(chosen_word)
+
 try:
     contents = path.read_text()
 except FileNotFoundError:
@@ -24,5 +27,5 @@ except FileNotFoundError:
     logger.error("Attempted run with file not found, %s", file_path)
 else:
     words = contents.split()
-    occurrences = words.count(chosen_word)
+    occurrences = word_count(words)
     print(f"The word '{chosen_word}' appears {occurrences} times in the {file_path}.\n")
