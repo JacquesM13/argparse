@@ -17,7 +17,7 @@ file_path = args.path
 
 path = Path(file_path)
 
-def word_count(doc: list[str], word: str):
+def word_count(doc: list[str], word: str) -> int:
     return doc.count(word)
 
 
