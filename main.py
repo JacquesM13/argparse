@@ -20,6 +20,7 @@ path = Path(file_path)
 def word_count(doc: list[str], word: str):
     return doc.count(word)
 
+
 try:
     contents = path.read_text()
 except FileNotFoundError:
